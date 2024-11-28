@@ -12,18 +12,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Speaker extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name',
-        'email',
-        'bio',
-        'twitter_handle',
-        'qualifications',
-    ];
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'bio',
+    //     'twitter_handle',
+    //     'qualifications',
+    // ];
     protected $casts = [
         'id' => 'integer',
         'qualifications' => 'array',
     ];
-
+    protected $guarded = [];
     public function conferences(): BelongsToMany
     {
         return $this->belongsToMany(Conference::class);
