@@ -11,6 +11,12 @@ class Talk extends Model
 {
     use HasFactory;
 
+
+    protected $fillable = [
+        'title',
+        'abstract',
+        'speaker_id',
+    ];
     protected $casts = [
         'id' => 'integer',
         'speaker_id' => 'integer',
